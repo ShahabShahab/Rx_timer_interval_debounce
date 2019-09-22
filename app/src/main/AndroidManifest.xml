@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+        xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.sample.screensaverapp">
 
     <application
@@ -9,23 +10,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ScreenSaverActivity"
-        android:launchMode="singleInstance">
-        </activity>
-
+        <activity android:name=".BaseActivityUsingIntervalOperator"/>
+        <activity android:name=".BaseActivityUsingDebounceOperator"/>
+        <activity android:name=".BaseActivityUsingTimerOperator"/>
+        <activity android:name=".ScreenSaverActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <uses-library
                 android:name="com.google.android.things"
                 android:required="false"/>
-
-        <activity android:name=".SecondScreenActivity"
-        android:launchMode="singleInstance">
+        <activity android:name=".BaseActivityUsingTimeTask">
         </activity>
-        <activity android:name=".BaseScreenSaverActivityUsingTimeTask">
-        </activity>
-        <activity android:name=".BaseScreenSaverActivityUsingRxOperator">
-        </activity>
-        <activity android:name=".FirstScreenActivity"
-        android:launchMode="singleInstance">
+        <activity
+                android:name=".FirstScreenActivity"
+                android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

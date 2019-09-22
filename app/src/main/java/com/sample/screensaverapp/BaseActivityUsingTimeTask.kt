@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-open class BaseScreenSaverActivityUsingTimeTask : AppCompatActivity(),
+open class BaseActivityUsingTimeTask : AppCompatActivity(),
     ScreenSaver.OnUserInteractionListener {
 
     private val TAG = "BaseSaverUsingTimeTask"
@@ -18,9 +18,9 @@ open class BaseScreenSaverActivityUsingTimeTask : AppCompatActivity(),
 
     private var screenSaverInstance: ScreenSaver? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base_screen_saver_using_time_task)
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume: ")
         screenSaverInstance = ScreenSaver.getInstance()
         screenSaverInstance?.setOnUserInteractionListener(this)
         screenSaverInstance?.startUserSessionTimer()
